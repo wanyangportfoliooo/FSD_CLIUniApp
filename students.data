@@ -1,0 +1,38 @@
+{
+    "accounts": [
+        {
+            "email": "a.a@university.com",
+            "password": "e1f834bd8f72dbdab060061a4357927f8db8056ce2a441db983304e179885bcbb09537c98aedea02b994dacd32c2e741fe0be53c8e5785ba908e9b2fa438ddd8"
+        }
+    ],
+    "students": [
+        {
+            "email": "a.a@university.com",
+            "name": "A A",
+            "id": "353877",
+            "subjects": [
+                {
+                    "id": 3589,
+                    "mark": 80,
+                    "grade": "D"
+                },
+                {
+                    "id": 9397,
+                    "mark": 63,
+                    "grade": "P"
+                },
+                {
+                    "id": 8408,
+                    "mark": 62,
+                    "grade": "P"
+                },
+                {
+                    "id": 8244,
+                    "mark": 71,
+                    "grade": "C"
+                }
+            ],
+            "mark": 69
+        }
+    ]
+}
