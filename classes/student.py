@@ -8,8 +8,8 @@ class Student:
     email: str
     name: str
     id: str = field(default_factory=lambda: f"{random.randint(1, 999999):06d}")
-    subjects: list[Subject] = field(default_factory=list)
-    mark : int = 0
+    subjects: list = field(default_factory=list)
+    mark: float = 0.0
 
     def regenerate_id(self):
         self.id = f"{random.randint(1, 999999):06d}"
@@ -25,14 +25,25 @@ class Student:
             if subject.id == sid:
                 self.subjects.remove(subject)
                 self.calculate_average()
-                print("Subject removed.")
-                return
-        print("Subject not found.")
+                return True
+        return False
 
     def calculate_average(self):
         if not self.subjects:
-            self.mark = 0
-            return 0
+            self.mark = 0.0
+            return 0.0
         total_mark = sum(subject.mark for subject in self.subjects)
-        self.mark = int(total_mark / len(self.subjects))
+        self.mark = total_mark / len(self.subjects)
         return self.mark
+
+    def get_grade(self):
+        if self.mark >= 85:
+            return "HD"
+        elif self.mark >= 75:
+            return "D"
+        elif self.mark >= 65:
+            return "C"
+        elif self.mark >= 50:
+            return "P"
+        else:
+            return "F"

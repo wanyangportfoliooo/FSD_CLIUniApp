@@ -38,7 +38,7 @@ class Database:
             json.dump(self._data, f, indent = 4)
 
     def reset_data(self):
-        self._data = self._BLANK_DATA
+        self._data = {"accounts": [], "students": []}
         self.update()
 
 
@@ -122,5 +122,10 @@ class DatabaseController:
                 account["password"] = new_password
                 self.__db.update()
                 return
+
+    def clear_database(self):
+        self.__data["students"] = []
+        self.__data["accounts"] = []
+        self.__db.update()
 
 
