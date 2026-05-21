@@ -3,7 +3,7 @@ from dataclasses import dataclass, field
 
 @dataclass
 class Subject:
-    id: int = field(default_factory=lambda: random.randint(1000, 9999))
+    id: int = field(default_factory=lambda: random.randint(1, 999))
     mark: int = field(default_factory=lambda: random.randint(25, 100))
     grade: str = "N/A"
 

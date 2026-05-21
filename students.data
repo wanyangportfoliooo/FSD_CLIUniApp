@@ -1,38 +1,90 @@
 {
     "accounts": [
         {
-            "email": "a.a@university.com",
-            "password": "e1f834bd8f72dbdab060061a4357927f8db8056ce2a441db983304e179885bcbb09537c98aedea02b994dacd32c2e741fe0be53c8e5785ba908e9b2fa438ddd8"
+            "email": "john.smith@university.com",
+            "password": "30598af1ff57f53dcf3ec18a6d3f6bc08b73b13e8c2bb1e0b776b57bb3919f82c602a22bfe15e4a5dda08f0ff608d2816f72db2807f5b09520aed855a758656d"
+        },
+        {
+            "email": "mary.tan@university.com",
+            "password": "9eaf0fbf5cc9b166d0670129d03c04583d7f0991458d018eed193c41581efeee2dbeb56894232ec6222919185f678041bb2eb36f49d2da6c9e9b44c2d77adb84"
+        },
+        {
+            "email": "bob.lee@university.com",
+            "password": "10a54f61823a690263ffe7014b3a684267acc28726e6f85fd515e43a3f897ecbaa8af93586a3628cb0044ccca99aaddc8dc504818bfeafa8a72ea1d85e19ca76"
+        },
+        {
+            "email": "jane.wong@university.com",
+            "password": "2d41c3c455d45485633af987bd495843aed544365feb2e5c58e811850573d8d1922d52d19f721add33e678bfcbe9ac88dec0294102869cceaf62e410af0a9dec"
+        },
+        {
+            "email": "test.user@university.com",
+            "password": "83273edd35cbdb267c6b826425c4df03fef42e9098888f2249c6466c4c57ee0cdac16c1c94ce07271aa41f2a2930efc38c5b2509ddc4f4e4e77da535bba71213"
         }
     ],
     "students": [
         {
-            "email": "a.a@university.com",
-            "name": "A A",
-            "id": "353877",
+            "email": "john.smith@university.com",
+            "name": "John",
+            "id": "668307",
             "subjects": [
                 {
-                    "id": 3589,
-                    "mark": 80,
-                    "grade": "D"
-                },
-                {
-                    "id": 9397,
-                    "mark": 63,
+                    "id": 8290,
+                    "mark": 55,
                     "grade": "P"
-                },
+                }
+            ],
+            "mark": 55.0
+        },
+        {
+            "email": "mary.tan@university.com",
+            "name": "Mary",
+            "id": "658687",
+            "subjects": [
                 {
-                    "id": 8408,
-                    "mark": 62,
-                    "grade": "P"
-                },
-                {
-                    "id": 8244,
-                    "mark": 71,
+                    "id": 2528,
+                    "mark": 67,
                     "grade": "C"
                 }
             ],
-            "mark": 69
+            "mark": 67.0
+        },
+        {
+            "email": "bob.lee@university.com",
+            "name": "Bob",
+            "id": "681596",
+            "subjects": [
+                {
+                    "id": 5445,
+                    "mark": 72,
+                    "grade": "C"
+                }
+            ],
+            "mark": 72.0
+        },
+        {
+            "email": "jane.wong@university.com",
+            "name": "Jane",
+            "id": "820355",
+            "subjects": [],
+            "mark": 0.0
+        },
+        {
+            "email": "test.user@university.com",
+            "name": "Test User",
+            "id": "323773",
+            "subjects": [
+                {
+                    "id": 757,
+                    "mark": 56,
+                    "grade": "P"
+                },
+                {
+                    "id": 498,
+                    "mark": 39,
+                    "grade": "F"
+                }
+            ],
+            "mark": 47.5
         }
     ]
 }

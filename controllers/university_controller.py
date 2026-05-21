@@ -3,22 +3,16 @@ import controllers.admin_controller as admin_controller
 
 def uni_menu():
     while True:
-        print("\nUniversity System:")
-        print("(A)dmin  ")
-        print("(S)tudent")
-        print("(X)exit")
-
-        choice = input("Choice: ")
+        choice = input("\nUniversity System: (A)dmin, (S)tudent, or X : ")
 
         if choice == "A":
             admin_controller.admin_menu()
-            return
 
         elif choice == "S":
             login_controller.login_menu()
 
         elif choice == "X":
-            print("Thank you")
+            print("Thank You")
             break
 
         else:

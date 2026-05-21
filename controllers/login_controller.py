@@ -10,27 +10,24 @@ db_controller = database_controller.DatabaseController()
 # ---------- Register ----------
 
 def register():
+    print("Student Sign Up")
 
-    email = input("Enter email: ")
+    email = input("Email: ")
+    password = getpass.getpass("Password: ")
 
-    print("Password must start with uppercase, contain 5 letters and end with 3+ digits.")
-    password = getpass.getpass("Enter password: ")
-
-    if not authenticator.validate_email(email):
-        print("Invalid email format.")
+    if not authenticator.validate_email(email) or not authenticator.validate_password(password):
+        print("Incorrect email or password format")
         return
 
-    if not authenticator.validate_password(password):
-        print("Invalid password format.")
-        return
+    print("email and password formats acceptable")
 
     if db_controller.check_dup_email(email):
-        print("Student already exists.")
+        name_part = email.split('@')[0]
+        name = ' '.join(part.capitalize() for part in name_part.split('.'))
+        print(f"Student {name} already exists")
         return
-    
-    print("Email and password format valid. Creating account...")
 
-    name = input("Enter your name: ")
+    name = input("Name: ")
 
     hashed_password = authenticator.hash_password(password)
     db_controller.create_account(Account(email=email, password=hashed_password))
@@ -39,38 +36,36 @@ def register():
     while db_controller.check_dup_id(new_student.id):
         new_student.regenerate_id()
 
-    print("Enrolling student " + name)
-    
+    print(f"Enrolling Student {name}")
+
     db_controller.create_student(new_student)
-    print("Registration successful.")
 
 
 # ---------- Login ----------
 
 def login():
+    print("Student Sign In")
 
     email = input("Email: ")
     password = getpass.getpass("Password: ")
 
-    if authenticator.authenticate(email, password):
-        print("Login successful.")
+    if not authenticator.validate_email(email) or not authenticator.validate_password(password):
+        print("Incorrect email or password format")
+        return
 
+    print("email and password formats acceptable")
+
+    if authenticator.authenticate(email, password):
         student_controller.student_menu(db_controller.get_student(email))
     else:
-        print("Invalid credentials.")
-
+        print("Student does not exist")
 
 
 # ----------- Menu -----------
 
 def login_menu():
     while True:
-        print("\nStudent Menu:")
-        print("(l)ogin")
-        print("(r)egister")
-        print("(x)exit")
-
-        choice = input("Choice: ")
+        choice = input("\nStudent System (l/r/x): ")
 
         if choice == "l":
             login()
@@ -79,7 +74,6 @@ def login_menu():
             register()
 
         elif choice == "x":
-            print("Exiting...")
             break
 
         else:
